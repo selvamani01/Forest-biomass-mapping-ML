@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Predicted Carbon Stock Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f4f4;
+            text-align: center;
+            padding: 30px;
+        }
+        h1 {
+            color: #2e7d32;
+        }
+        table {
+            margin: auto;
+            border-collapse: collapse;
+            width: 90%;
+            background-color: #ffffff;
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+        }
+        th {
+            background-color: #4caf50;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #2e7d32;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        a:hover {
+            background-color: #1b5e20;
+        }
+    </style>
+</head>
+<body>
+    <h1>Predicted Carbon Stock Results</h1>
+
+    <!-- Render the DataFrame table -->
+    {{ table | safe }}
+
+    <!-- Download link for output CSV -->
+    <a href="{{ url_for('static', filename=download_link) }}" download>Download Results as CSV</a>
+</body>
+</html>
